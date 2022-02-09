@@ -5,11 +5,15 @@ import 'semantic-ui-css/semantic.min.css'
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
 import { store, StoreContext } from './app/stores/store';
+import { BrowserRouter } from 'react-router-dom';
 
 //<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css"/>
 ReactDOM.render(
   <StoreContext.Provider value={store}>
+    <BrowserRouter>
     <App />
+    </BrowserRouter>
+   
     </StoreContext.Provider>,
   document.getElementById('root')
 );
