@@ -12,10 +12,14 @@ function App() {
   const location=useLocation();
   return (
     <>
-      <NavBar/>
+    <Routes>
+     <Route path='/' element={<HomePage />}/>
+     <Route path={'/*'}
+     element={
+        <>
+        <NavBar/>
         <Container style={{marginTop:'7em'}}>
         <Routes>
-           <Route path="/" element={<HomePage />}/>
            <Route path="/activities" element={<ActivityDashboard />}/>
            <Route path="/activities/:id" element={<ActivityDetails />}/>
            {['/createActivity', '/manage/:id'].map((path) => (
@@ -23,8 +27,10 @@ function App() {
         ))}
         </Routes>
         </Container>
-      
-       </>
+        </>
+    } />
+    </Routes>
+    </>
   );
 }
 
