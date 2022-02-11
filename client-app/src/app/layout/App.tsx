@@ -20,7 +20,7 @@ function App() {
            <Route path="/activities/:id" element={<ActivityDetails />}/>
            {['/createActivity', '/manage/:id'].map((path) => (
             <Route key={location.key} path={path} element={<ActivityForm />} />
-          ))}
+        ))}
         </Routes>
         </Container>
       
